@@ -10,35 +10,36 @@ using Norm;
 
 namespace DatabaseSimulator.NoSQL
 {
-    public class NoSqlServiceManager
+    public class NoSqlServiceManager : IDatabaseManager
     {
-        //tmp
-        public List<Product> GetLisOfProducts()
-        {
-            var retval = new List<Product>();
-
-            using (var db = Mongo.Create(Constants.DatabaseAdress))
-            {
-                retval = db.GetCollection<Product>().Find().ToList();
-            }
-            return retval;
-        }
-
-        public void SaveProduct(Product product)
+        public void Insert(Product obj)
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                db.GetCollection<Product>().Save(product);
+                long newid = db.GetCollection<Product>().GenerateId(); 
+                obj.Id = (int)newid;
+                db.GetCollection<Product>().Save(obj);
             }
         }
 
-        public Product GetProductById(int id)
+        public Product GetProductByID(int id)
         {
             Product retval = null;
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
                 retval = db.GetCollection<Product>().AsQueryable().FirstOrDefault(x => x.Id == id);
+            }
+            return retval;
+        }
+
+        public List<Product> GetAllObjects()
+        {
+            var retval = new List<Product>();
+
+            using (var db = Mongo.Create(Constants.DatabaseAdress))
+            {
+                retval = db.GetCollection<Product>().Find().ToList();
             }
             return retval;
         }

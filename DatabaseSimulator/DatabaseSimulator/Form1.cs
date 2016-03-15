@@ -18,5 +18,11 @@ namespace DatabaseSimulator
         {
             InitializeComponent();
         }
+
+        private void btnPerform_Click(object sender, EventArgs e)
+        {
+            TestManager<NoSqlServiceManager> noSqlTest =    new TestManager<NoSqlServiceManager>(txtOutput);
+            noSqlTest.PerformInserts(1000);
+        }
     }
 }

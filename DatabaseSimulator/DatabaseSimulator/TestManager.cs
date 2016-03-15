@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +11,30 @@ namespace DatabaseSimulator
 {
     public class TestManager<T> where T : IDatabaseManager,new()
     {
-        private TextBox _output { get; set; }
-        private IDatabaseManager _database { get; set; }
+        private RichTextBox Output { get; set; }
+        private IDatabaseManager Database { get; set; }
 
-        public TestManager(TextBox output)
+        public TestManager(RichTextBox output)
         {
-            _output = output;
-            _database = new T();
+            Output = output;
+            Database = new T();
         }
 
         public void PerformInserts(int quantity)
         {
-            _output.AppendText(string.Format("Performing {0} inserts started", quantity));
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            Output.AppendText(string.Format("Performing {0} inserts started", quantity));
 
             for (int i = 0; i < quantity; i++)
             {
-                _database.Insert(new Product() {Name = i.ToString(),Price = i});
+                Database.Insert(new Product() {Name = i.ToString(),Price = i});
             }
-            _output.AppendText(string.Format("Test finished with time : ", quantity));
+            
+            watch.Stop();
+            Output.AppendText(string.Format("\nTest finished with time : {0}\n", watch.Elapsed));
         }
 
     }
+
 }
