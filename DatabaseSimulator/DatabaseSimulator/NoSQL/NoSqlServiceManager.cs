@@ -12,6 +12,8 @@ namespace DatabaseSimulator.NoSQL
 {
     public class NoSqlServiceManager : IDatabaseManager
     {
+        public string Name { get; set; } = "NoSql";
+
         public void Insert(Product obj)
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))

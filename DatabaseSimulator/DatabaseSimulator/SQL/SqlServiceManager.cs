@@ -8,6 +8,8 @@ namespace DatabaseSimulator.SQL
 {
     public class SqlServiceManager : IDatabaseManager
     {
+        public string Name { get; set; } = "SQL";
+
         public void Insert(Product obj)
         {
             using (var db = new SqlModel())

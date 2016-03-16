@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseSimulator.NoSQL;
 using DatabaseSimulator.NoSQL.Entities;
+using DatabaseSimulator.SQL;
 
 namespace DatabaseSimulator
 {
@@ -21,8 +22,16 @@ namespace DatabaseSimulator
 
         private void btnPerform_Click(object sender, EventArgs e)
         {
-            TestManager<NoSqlServiceManager> noSqlTest =    new TestManager<NoSqlServiceManager>(txtOutput);
-            noSqlTest.PerformInserts(1000);
+            int quantity = (int) cmbQuantity.Value;
+            InsertTest<NoSqlServiceManager> noSqlInsertTest = new InsertTest<NoSqlServiceManager>(txtOutput, quantity);
+            noSqlInsertTest.PerformTest();
+        }
+
+        private void btnPerformSql_Click(object sender, EventArgs e)
+        {
+            int quantity = (int) cmbQuantity.Value;
+            InsertTest<SqlServiceManager> noSqlInsertTest = new InsertTest<SqlServiceManager>(txtOutput, quantity);
+            noSqlInsertTest.PerformTest();
         }
     }
 }

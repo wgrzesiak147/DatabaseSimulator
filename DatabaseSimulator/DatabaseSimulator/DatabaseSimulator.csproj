@@ -78,8 +78,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlModel.cs" />
     <Compile Include="SQL\SqlServiceManager.cs" />
-    <Compile Include="TestManager.cs" />
-    <Compile Include="TestObject.cs" />
+    <Compile Include="InsertTest.cs" />
+    <Compile Include="Test.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
