@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests.Tests
 {
-    public class GetByIdTest : Test
+    public class GetByIdTest<T> : Test where T : IDatabaseManager, new()
     {
         private int _id;
-        public GetByIdTest(RichTextBox output, IDatabaseManager database,int id) : base(output, database)
+        public GetByIdTest(RichTextBox output, int id) : base(output, new T())
         {
             _id = id;
         }

@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests
 {
-    public class GetAllTest : Test
+    public class GetAllTest<T> : Test where T : IDatabaseManager, new()
     {
-        public GetAllTest(RichTextBox output, IDatabaseManager database) : base(output, database)
+        public GetAllTest(RichTextBox output) : base(output, new T())
         {
         }
 
