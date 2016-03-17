@@ -15,24 +15,26 @@ namespace DatabaseSimulator
 {
     public partial class Form1 : Form
     {
-        private NoSqlTestManager _noSqlTestManager = new NoSqlTestManager();
-        private SqlTestManager _sqlTestManager = new SqlTestManager();
+        private readonly NoSqlTestManager _noSqlTestManager;
+        private readonly SqlTestManager _sqlTestManager;
 
         public Form1()
         {
             InitializeComponent();
+            _sqlTestManager = new SqlTestManager(txtOutput);
+            _noSqlTestManager = new NoSqlTestManager(txtOutput);
         }
 
         private void btnPerform_Click(object sender, EventArgs e)
         {
             int quantity = (int) cmbQuantity.Value;
-            _noSqlTestManager.PerformInserts<Product>(quantity);
+            _noSqlTestManager.PerformInserts(quantity);
         }
 
         private void btnPerformSql_Click(object sender, EventArgs e)
         {
             int quantity = (int) cmbQuantity.Value;
-            _sqlTestManager.PerformInserts<Product>(quantity);
+            _sqlTestManager.PerformInserts(quantity);
         }
     }
 }

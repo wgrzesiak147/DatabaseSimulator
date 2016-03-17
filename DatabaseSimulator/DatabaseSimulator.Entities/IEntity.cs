@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseSimulator.Tests.Generic
+namespace DatabaseSimulator.Entities
 {
-    internal interface ITestManager
+    public interface IEntity
     {
-        void PerformInserts(int quantity);
+       int Id { get; set; }
     }
 }

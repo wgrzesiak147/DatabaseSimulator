@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using DatabaseSimulator.Entities;
 using DatabaseSimulator.NoSQL.Entities;
 using Norm;
 
@@ -24,9 +25,10 @@ namespace DatabaseSimulator.NoSQL
             }
         }
 
+
         public Product GetProductByID(int id)
         {
-            Product retval = null;
+            Product retval;
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {

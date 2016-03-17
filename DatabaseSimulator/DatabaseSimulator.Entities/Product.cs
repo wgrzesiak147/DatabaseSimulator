@@ -1,3 +1,5 @@
+using DatabaseSimulator.Entities;
+
 namespace DatabaseSimulator
 {
     using System;
@@ -6,7 +8,7 @@ namespace DatabaseSimulator
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Product")]
-    public partial class Product
+    public partial class Product : IEntity
     {
         public int Id { get; set; }
 

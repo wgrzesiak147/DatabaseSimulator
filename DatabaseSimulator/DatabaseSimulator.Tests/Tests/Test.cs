@@ -35,6 +35,7 @@ namespace DatabaseSimulator
             catch (Exception ex)
             {
                 Output.AppendText(string.Format(Environment.NewLine + ex.Message + Environment.NewLine));
+                Output.ScrollToCaret();
                 return;
             }
             watch.Stop();
