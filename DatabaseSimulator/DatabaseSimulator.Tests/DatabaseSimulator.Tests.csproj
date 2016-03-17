@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Generic\ITestManager.cs" />
     <Compile Include="Tests\GetAllTest.cs" />
+    <Compile Include="Tests\GetByIdTest.cs" />
     <Compile Include="Tests\InsertTest.cs" />
     <Compile Include="NoSQL\NoSQLTestManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
