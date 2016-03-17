@@ -16,7 +16,7 @@ namespace DatabaseSimulator.Tests
         protected override string TestName { get; set; } = "GetAlltest";
         protected override void TestLogic()
         {
-           List<Product> listOfObjects = Database.GetAllObjects();
+           List<Product> listOfObjects = Database.GetAllProducts();
            Output.AppendText(String.Format("Received {0} objects", listOfObjects.Count()));
         }
     }

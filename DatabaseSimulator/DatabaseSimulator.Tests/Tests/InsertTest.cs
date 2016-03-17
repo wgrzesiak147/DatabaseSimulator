@@ -27,7 +27,7 @@ namespace DatabaseSimulator
             }
             for (int i = 0; i < _quantity; i++)
             {
-                Database.Insert(new Product() { Name = i.ToString(), Price = i });
+                Database.InsertProduct(new Product() { Name = i.ToString(), Price = i });
             }
         }
     }

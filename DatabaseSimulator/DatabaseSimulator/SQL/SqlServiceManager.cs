@@ -10,7 +10,7 @@ namespace DatabaseSimulator.SQL
     {
         public string Name { get; set; } = "SQL";
 
-        public void Insert(Product obj)
+        public void InsertProduct(Product obj)
         {
             using (var db = new SqlModel())
             {
@@ -28,7 +28,7 @@ namespace DatabaseSimulator.SQL
             }
         }
 
-        public List<Product> GetAllObjects()
+        public List<Product> GetAllProducts()
         {
             using (var db = new SqlModel())
             {

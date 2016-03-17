@@ -10,9 +10,9 @@ namespace DatabaseSimulator
     public interface IDatabaseManager
     {
         string Name { get; set; }
-        void Insert(Product obj);
+        void InsertProduct(Product obj);
         Product GetProductByID(int id);
-        List<Product> GetAllObjects();
+        List<Product> GetAllProducts();
 
     }
 }

@@ -15,7 +15,7 @@ namespace DatabaseSimulator.NoSQL
     {
         public string Name { get; set; } = "NoSql";
 
-        public void Insert(Product obj)
+        public void InsertProduct(Product obj)
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
@@ -37,7 +37,7 @@ namespace DatabaseSimulator.NoSQL
             return retval;
         }
 
-        public List<Product> GetAllObjects()
+        public List<Product> GetAllProducts()
         {
             var retval = new List<Product>();
 
