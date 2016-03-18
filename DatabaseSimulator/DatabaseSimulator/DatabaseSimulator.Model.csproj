@@ -64,11 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="IDatabaseManager.cs" />
-    <Compile Include="NoSQL\Entities\Blog.cs" />
-    <Compile Include="NoSQL\Entities\Product.cs" />
-    <Compile Include="NoSQL\Entities\RssEntry.cs" />
     <Compile Include="NoSQL\NoSqlServiceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlModel.cs" />

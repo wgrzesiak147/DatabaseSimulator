@@ -28,13 +28,13 @@ namespace DatabaseSimulator
         private void btnPerform_Click(object sender, EventArgs e)
         {
             int quantity = (int) cmbQuantity.Value;
-            _noSqlTestManager.PerformInserts(quantity);
+            _noSqlTestManager.PerformProductInserts(quantity);
         }
 
         private void btnPerformSql_Click(object sender, EventArgs e)
         {
             int quantity = (int) cmbQuantity.Value;
-            _sqlTestManager.PerformInserts(quantity);
+            _sqlTestManager.PerformProductInserts(quantity);
         }
     }
 }

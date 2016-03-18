@@ -19,21 +19,21 @@ namespace DatabaseSimulator.SQL
            _output = txtOutput;
        }
 
-       public void PerformInserts(int quantity)
+       public void PerformProductInserts(int quantity)
        {
-            InsertTest<SqlServiceManager> insertTest = new InsertTest<SqlServiceManager>(_output, quantity);
+            ProductInsertTest<SqlServiceManager> productInsertTest = new ProductInsertTest<SqlServiceManager>(_output, quantity);
+            productInsertTest.PerformTest();
+        }
+
+        public void PerformProductGetAll()
+        {
+            ProductGetAllTest<SqlServiceManager> insertTest = new ProductGetAllTest<SqlServiceManager>(_output);
             insertTest.PerformTest();
         }
 
-        public void PerformGetAll()
+        public void PerformProductGetByIdTest(int id)
         {
-            GetAllTest<SqlServiceManager> insertTest = new GetAllTest<SqlServiceManager>(_output);
-            insertTest.PerformTest();
-        }
-
-        public void PerformGetByIdTest(int id)
-        {
-            GetByIdTest<SqlServiceManager> insertTest = new GetByIdTest<SqlServiceManager>(_output, id);
+            ProductGetByIdTest<SqlServiceManager> insertTest = new ProductGetByIdTest<SqlServiceManager>(_output, id);
             insertTest.PerformTest();
         }
     }

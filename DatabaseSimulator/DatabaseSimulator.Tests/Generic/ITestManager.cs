@@ -9,8 +9,8 @@ namespace DatabaseSimulator.Tests.Generic
 {
     internal interface ITestManager
     {
-        void PerformInserts(int quantity);
-        void PerformGetAll();
-        void PerformGetByIdTest(int id);
+        void PerformProductInserts(int quantity);
+        void PerformProductGetAll();
+        void PerformProductGetByIdTest(int id);
     }
 }

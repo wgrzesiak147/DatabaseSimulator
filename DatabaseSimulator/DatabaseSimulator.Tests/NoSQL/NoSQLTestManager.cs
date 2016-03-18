@@ -19,21 +19,21 @@ namespace DatabaseSimulator.NoSQL
             _output = txtOutput;
         }
 
-        public void PerformInserts(int quantity)
+        public void PerformProductInserts(int quantity)
         {
-            InsertTest<NoSqlServiceManager> insertTest = new InsertTest<NoSqlServiceManager>(_output,quantity);
+            ProductInsertTest<NoSqlServiceManager> productInsertTest = new ProductInsertTest<NoSqlServiceManager>(_output,quantity);
+            productInsertTest.PerformTest();
+        }
+
+        public void PerformProductGetAll()
+        {
+            ProductGetAllTest<NoSqlServiceManager> insertTest = new ProductGetAllTest<NoSqlServiceManager>(_output);
             insertTest.PerformTest();
         }
 
-        public void PerformGetAll()
+        public void PerformProductGetByIdTest(int id)
         {
-            GetAllTest<NoSqlServiceManager> insertTest = new GetAllTest<NoSqlServiceManager>(_output);
-            insertTest.PerformTest();
-        }
-
-        public void PerformGetByIdTest(int id)
-        {
-            GetByIdTest<NoSqlServiceManager> insertTest = new GetByIdTest<NoSqlServiceManager>(_output,id);
+            ProductGetByIdTest<NoSqlServiceManager> insertTest = new ProductGetByIdTest<NoSqlServiceManager>(_output,id);
             insertTest.PerformTest();
         }
     }
