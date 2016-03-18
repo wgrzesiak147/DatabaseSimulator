@@ -36,5 +36,23 @@ namespace DatabaseSimulator.NoSQL
             ProductGetByIdTest<NoSqlServiceManager> insertTest = new ProductGetByIdTest<NoSqlServiceManager>(_output,id);
             insertTest.PerformTest();
         }
+
+        public void PerformBlogInserts(int quantity)
+        {
+            BlogInsertTest<NoSqlServiceManager> productInsertTest = new BlogInsertTest<NoSqlServiceManager>(_output, quantity);
+            productInsertTest.PerformTest();
+        }
+
+        public void PerformBlogGetAll()
+        {
+            BlogGetAllTest<NoSqlServiceManager> insertTest = new BlogGetAllTest<NoSqlServiceManager>(_output);
+            insertTest.PerformTest();
+        }
+
+        public void PerformBlogGetByIdTest(int id)
+        {
+            BlogGetByIdTest<NoSqlServiceManager> productInsertTest = new BlogGetByIdTest<NoSqlServiceManager>(_output, id);
+            productInsertTest.PerformTest();
+        }
     }
 }

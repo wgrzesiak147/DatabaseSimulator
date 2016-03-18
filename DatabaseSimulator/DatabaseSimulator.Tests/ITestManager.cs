@@ -12,5 +12,10 @@ namespace DatabaseSimulator.Tests.Generic
         void PerformProductInserts(int quantity);
         void PerformProductGetAll();
         void PerformProductGetByIdTest(int id);
+
+        void PerformBlogInserts(int quantity);
+        void PerformBlogGetAll();
+        void PerformBlogGetByIdTest(int id);
+
     }
 }

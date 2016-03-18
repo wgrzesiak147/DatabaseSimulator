@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generic\ITestManager.cs" />
+    <Compile Include="ITestManager.cs" />
+    <Compile Include="Tests\BlogGetAllTest.cs" />
+    <Compile Include="Tests\BlogGetByIdTest.cs" />
+    <Compile Include="Tests\BlogInsertTest.cs" />
     <Compile Include="Tests\ProductGetAllTest.cs" />
     <Compile Include="Tests\ProductGetByIdTest.cs" />
     <Compile Include="Tests\ProductInsertTest.cs" />
