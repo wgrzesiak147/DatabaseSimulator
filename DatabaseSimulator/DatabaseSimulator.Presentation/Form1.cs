@@ -31,10 +31,5 @@ namespace DatabaseSimulator
             _noSqlTestManager.PerformProductInserts(quantity);
         }
 
-        private void btnPerformSql_Click(object sender, EventArgs e)
-        {
-            int quantity = (int) cmbQuantity.Value;
-            _sqlTestManager.PerformProductInserts(quantity);
-        }
     }
 }
