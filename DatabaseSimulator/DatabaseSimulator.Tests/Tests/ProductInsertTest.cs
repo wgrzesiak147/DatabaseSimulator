@@ -5,17 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DatabaseSimulator.NoSQL.Entities;
 
 namespace DatabaseSimulator
 {
-    public class InsertTest<T> : Test where T : IDatabaseManager, new()
+    public class ProductInsertTest<T> : Test where T : IDatabaseManager, new()
     {
         private readonly int _quantity;
-        public InsertTest(RichTextBox output,int quantity) : base(output, new T())
+        public ProductInsertTest(RichTextBox output,int quantity) : base(output, new T())
         {
             _quantity = quantity;
-            TestName = quantity + " inserts";
+            TestName = quantity + " products inserts";
         }
 
         protected override string TestName { get; set; }

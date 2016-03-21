@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests
 {
-    public class GetAllTest<T> : Test where T : IDatabaseManager, new()
+    public class ProductGetAllTest<T> : Test where T : IDatabaseManager, new()
     {
-        public GetAllTest(RichTextBox output) : base(output, new T())
+        public ProductGetAllTest(RichTextBox output) : base(output, new T())
         {
         }
 
-        protected override string TestName { get; set; } = "GetAlltest";
+        protected override string TestName { get; set; } = "Product GetAlltest";
         protected override void TestLogic()
         {
            List<Product> listOfObjects = Database.GetAllProducts();

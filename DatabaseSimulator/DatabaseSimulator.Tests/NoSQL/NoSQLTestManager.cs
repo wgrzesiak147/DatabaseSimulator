@@ -14,22 +14,40 @@ namespace DatabaseSimulator.Tests.NoSQL
             _output = txtOutput;
         }
 
-        public void PerformInserts(int quantity)
+        public void PerformProductInserts(int quantity)
         {
-            InsertTest<NoSqlServiceManager> insertTest = new InsertTest<NoSqlServiceManager>(_output,quantity);
+            ProductInsertTest<NoSqlServiceManager> productInsertTest = new ProductInsertTest<NoSqlServiceManager>(_output,quantity);
+            productInsertTest.PerformTest();
+        }
+
+        public void PerformProductGetAll()
+        {
+            ProductGetAllTest<NoSqlServiceManager> insertTest = new ProductGetAllTest<NoSqlServiceManager>(_output);
             insertTest.PerformTest();
         }
 
-        public void PerformGetAll()
+        public void PerformProductGetByIdTest(int id)
         {
-            GetAllTest<NoSqlServiceManager> insertTest = new GetAllTest<NoSqlServiceManager>(_output);
+            ProductGetByIdTest<NoSqlServiceManager> insertTest = new ProductGetByIdTest<NoSqlServiceManager>(_output,id);
             insertTest.PerformTest();
         }
 
-        public void PerformGetByIdTest(int id)
+        public void PerformBlogInserts(int quantity)
         {
-            GetByIdTest<NoSqlServiceManager> insertTest = new GetByIdTest<NoSqlServiceManager>(_output,id);
+            BlogInsertTest<NoSqlServiceManager> productInsertTest = new BlogInsertTest<NoSqlServiceManager>(_output, quantity);
+            productInsertTest.PerformTest();
+        }
+
+        public void PerformBlogGetAll()
+        {
+            BlogGetAllTest<NoSqlServiceManager> insertTest = new BlogGetAllTest<NoSqlServiceManager>(_output);
             insertTest.PerformTest();
+        }
+
+        public void PerformBlogGetByIdTest(int id)
+        {
+            BlogGetByIdTest<NoSqlServiceManager> productInsertTest = new BlogGetByIdTest<NoSqlServiceManager>(_output, id);
+            productInsertTest.PerformTest();
         }
     }
 }

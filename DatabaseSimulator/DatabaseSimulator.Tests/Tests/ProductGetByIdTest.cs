@@ -7,15 +7,15 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests.Tests
 {
-    public class GetByIdTest<T> : Test where T : IDatabaseManager, new()
+    public class ProductGetByIdTest<T> : Test where T : IDatabaseManager, new()
     {
         private int _id;
-        public GetByIdTest(RichTextBox output, int id) : base(output, new T())
+        public ProductGetByIdTest(RichTextBox output, int id) : base(output, new T())
         {
             _id = id;
         }
 
-        protected override string TestName { get; set; } = "GetById";
+        protected override string TestName { get; set; } = "Product GetById";
         protected override void TestLogic()
         {
             Database.GetProductByID(_id);
