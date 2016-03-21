@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DatabaseSimulator.Tests;
+﻿using System.Windows.Forms;
+using DatabaseSimulator.NoSQL;
 using DatabaseSimulator.Tests.Generic;
 using DatabaseSimulator.Tests.Tests;
 
-namespace DatabaseSimulator.NoSQL
+namespace DatabaseSimulator.Tests.NoSQL
 {
     public class NoSqlTestManager : ITestManager
     {
