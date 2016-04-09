@@ -14,10 +14,10 @@ namespace DatabaseSimulator
         public ProductInsertTest(RichTextBox output,int quantity) : base(output, new T())
         {
             _quantity = quantity;
-            TestName = quantity + " products inserts";
         }
 
-        protected override string TestName { get; set; }
+        protected override string TestName => _quantity + " Products insert";
+
         protected override void TestLogic()
         {
             if (_quantity <= 0)

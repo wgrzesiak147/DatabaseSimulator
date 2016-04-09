@@ -13,10 +13,10 @@ namespace DatabaseSimulator
         void InsertProduct(Product objProduct);
         Product GetProductByID(int id);
         List<Product> GetAllProducts();
-
         void InsertBlog(Blog objBlog);
         Blog GetBlogByID(int id);
         List<Blog> GetAllBlogs();
-
+        void CleanBlogs();
+        void CleanProducts();
     }
 }

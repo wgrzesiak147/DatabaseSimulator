@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DatabaseSimulator.Entities
+namespace DatabaseSimulator
 {
-    public class Post : IEntity
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("Post")]
+    public partial class Post
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
-        public int BlogId { get; set; }
-        public virtual Blog Blog { get; set; }
 
+        [StringLength(10)]
+        public string Title { get; set; }
+
+        [StringLength(20)]
+        public string Content { get; set; }
+
+        public int? BlogId { get; set; }
+
+        public virtual Blog Blog { get; set; }
     }
 }

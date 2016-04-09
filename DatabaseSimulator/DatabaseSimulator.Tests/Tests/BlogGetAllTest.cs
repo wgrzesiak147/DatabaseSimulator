@@ -14,11 +14,11 @@ namespace DatabaseSimulator.Tests.Tests
         {
         }
 
-        protected override string TestName { get; set; }
+        protected override string TestName => Constants.Blog + "GetAll";
         protected override void TestLogic()
         {
             List<Blog> listOfObjects = Database.GetAllBlogs();
-            Output.AppendText(String.Format("Received {0} objects", listOfObjects.Count()));
+            Output.AppendText(String.Format(Environment.NewLine + "Received {0} objects", listOfObjects.Count()));
         }
     }
 }

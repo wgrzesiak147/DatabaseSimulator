@@ -10,10 +10,10 @@ namespace DatabaseSimulator.SQL
     public class SqlServiceManager : IDatabaseManager
     {
         public string Name { get; set; } = "SQL";
-
+       
         public void InsertProduct(Product objProduct)
         {
-            using (var db = new SqlModel())
+            using (var db = new Model1())
             {
                 db.Product.Add(objProduct);
                 db.SaveChanges();
@@ -22,7 +22,7 @@ namespace DatabaseSimulator.SQL
 
         public Product GetProductByID(int id)
         {
-            using (var db = new SqlModel())
+            using (var db = new Model1())
             {
                 Product product = db.Product.FirstOrDefault(x => x.Id == id);
                 return product;
@@ -31,7 +31,7 @@ namespace DatabaseSimulator.SQL
 
         public List<Product> GetAllProducts()
         {
-            using (var db = new SqlModel())
+            using (var db = new Model1())
             {
                 List<Product> products = db.Product.ToList();
                 return products;
@@ -40,9 +40,9 @@ namespace DatabaseSimulator.SQL
 
         public void InsertBlog(Blog objBlog)
         {
-            using (var db = new BlogModel())
+            using (var db = new Model1())
             {
-                db.Blogs.Add(objBlog);
+                db.Blog.Add(objBlog);
                 db.SaveChanges();
             }
         }
@@ -50,21 +50,37 @@ namespace DatabaseSimulator.SQL
 
         public Blog GetBlogByID(int id)
         {
-            using (var db = new BlogModel())
+            using (var db = new Model1())
             {
-                Blog blog = db.Blogs.FirstOrDefault(x => x.Id == id);
+                Blog blog = db.Blog.FirstOrDefault(x => x.Id == id);
                 return blog;
             }
         }
 
         public List<Blog> GetAllBlogs()
         {
-            using (var db = new BlogModel())
+            using (var db = new Model1())
             {
-                List<Blog> blogs = db.Blogs.ToList();
+                List<Blog> blogs = db.Blog.ToList();
                 return blogs;
             }
         }
 
+        public void CleanBlogs()
+        {
+            using (var db = new Model1())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE Post");
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE Blog");
+            }
+        }
+
+        public void CleanProducts()
+        {
+            using (var db = new Model1())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE Product");
+            }    
+        }
     }
 }

@@ -7,15 +7,16 @@ using DatabaseSimulator.Tests.Tests;
 
 namespace DatabaseSimulator.Tests.Generic
 {
-    internal interface ITestManager
+    public interface ITestManager
     {
         void PerformProductInserts(int quantity);
         void PerformProductGetAll();
         void PerformProductGetByIdTest(int id);
-
         void PerformBlogInserts(int quantity);
         void PerformBlogGetAll();
         void PerformBlogGetByIdTest(int id);
+        void PerformBlogClean();
+        void PerformProductClean();
 
     }
 }

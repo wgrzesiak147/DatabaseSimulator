@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.UserPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbDatabase = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbEntity = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +48,8 @@
             // UserPanel
             // 
             this.UserPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserPanel.Controls.Add(this.label4);
+            this.UserPanel.Controls.Add(this.cmbDatabase);
             this.UserPanel.Controls.Add(this.label3);
             this.UserPanel.Controls.Add(this.cmbEntity);
             this.UserPanel.Controls.Add(this.label2);
@@ -54,19 +58,39 @@
             this.UserPanel.Controls.Add(this.label1);
             this.UserPanel.Controls.Add(this.cmbQuantity);
             this.UserPanel.Controls.Add(this.btnPerformNoSql);
-            this.UserPanel.Location = new System.Drawing.Point(2, 1);
-            this.UserPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.UserPanel.Location = new System.Drawing.Point(3, 1);
+            this.UserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(624, 448);
+            this.UserPanel.Size = new System.Drawing.Size(831, 550);
             this.UserPanel.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(75, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Database";
+            // 
+            // cmbDatabase
+            // 
+            this.cmbDatabase.FormattingEnabled = true;
+            this.cmbDatabase.Items.AddRange(new object[] {
+            "MSSQL 2012",
+            "MongoDB"});
+            this.cmbDatabase.Location = new System.Drawing.Point(185, 41);
+            this.cmbDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDatabase.Name = "cmbDatabase";
+            this.cmbDatabase.Size = new System.Drawing.Size(180, 24);
+            this.cmbDatabase.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 41);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(81, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Entity";
             // 
@@ -76,19 +100,18 @@
             this.cmbEntity.Items.AddRange(new object[] {
             "Product",
             "Blog"});
-            this.cmbEntity.Location = new System.Drawing.Point(76, 41);
-            this.cmbEntity.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEntity.Location = new System.Drawing.Point(185, 158);
+            this.cmbEntity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEntity.Name = "cmbEntity";
-            this.cmbEntity.Size = new System.Drawing.Size(136, 21);
+            this.cmbEntity.Size = new System.Drawing.Size(180, 24);
             this.cmbEntity.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 104);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(73, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Command";
             // 
@@ -98,75 +121,75 @@
             this.cmbCommand.Items.AddRange(new object[] {
             "Insert",
             "GetByID",
-            "GetAllElements"});
-            this.cmbCommand.Location = new System.Drawing.Point(76, 104);
-            this.cmbCommand.Margin = new System.Windows.Forms.Padding(2);
+            "GetAll",
+            "Clean"});
+            this.cmbCommand.Location = new System.Drawing.Point(185, 99);
+            this.cmbCommand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCommand.Name = "cmbCommand";
-            this.cmbCommand.Size = new System.Drawing.Size(136, 21);
+            this.cmbCommand.Size = new System.Drawing.Size(180, 24);
             this.cmbCommand.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.txtOutput);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 411);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(620, 110);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(827, 135);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(2, 2);
-            this.txtOutput.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOutput.Location = new System.Drawing.Point(3, 2);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(616, 108);
+            this.txtOutput.Size = new System.Drawing.Size(820, 132);
             this.txtOutput.TabIndex = 5;
             this.txtOutput.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 160);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(75, 238);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Quantity";
             // 
             // cmbQuantity
             // 
-            this.cmbQuantity.Location = new System.Drawing.Point(77, 158);
-            this.cmbQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbQuantity.Location = new System.Drawing.Point(185, 233);
+            this.cmbQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbQuantity.Maximum = new decimal(new int[] {
             1410065408,
             2,
             0,
             0});
             this.cmbQuantity.Name = "cmbQuantity";
-            this.cmbQuantity.Size = new System.Drawing.Size(135, 20);
+            this.cmbQuantity.Size = new System.Drawing.Size(180, 22);
             this.cmbQuantity.TabIndex = 2;
             // 
             // btnPerformNoSql
             // 
-            this.btnPerformNoSql.Location = new System.Drawing.Point(231, 278);
-            this.btnPerformNoSql.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPerformNoSql.Location = new System.Drawing.Point(308, 342);
+            this.btnPerformNoSql.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPerformNoSql.Name = "btnPerformNoSql";
-            this.btnPerformNoSql.Size = new System.Drawing.Size(100, 32);
+            this.btnPerformNoSql.Size = new System.Drawing.Size(133, 39);
             this.btnPerformNoSql.TabIndex = 0;
             this.btnPerformNoSql.Text = "Perform Test";
             this.btnPerformNoSql.UseVisualStyleBackColor = true;
-            this.btnPerformNoSql.Click += new System.EventHandler(this.btnPerform_Click);
+            this.btnPerformNoSql.Click += new System.EventHandler(this.btnPerformNoSql_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 445);
+            this.ClientSize = new System.Drawing.Size(832, 548);
             this.Controls.Add(this.UserPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Database Simulator";
             this.UserPanel.ResumeLayout(false);
             this.UserPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -186,6 +209,8 @@
         private System.Windows.Forms.ComboBox cmbCommand;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbEntity;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbDatabase;
     }
 }
 

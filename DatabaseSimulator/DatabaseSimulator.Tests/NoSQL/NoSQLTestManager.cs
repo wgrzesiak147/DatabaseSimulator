@@ -49,5 +49,15 @@ namespace DatabaseSimulator.Tests.NoSQL
             BlogGetByIdTest<NoSqlServiceManager> productInsertTest = new BlogGetByIdTest<NoSqlServiceManager>(_output, id);
             productInsertTest.PerformTest();
         }
+
+        public void PerformBlogClean()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PerformProductClean()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

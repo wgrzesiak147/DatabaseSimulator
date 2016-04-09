@@ -11,7 +11,7 @@ namespace DatabaseSimulator
 {
     public abstract class Test
     {
-        protected abstract string TestName { get; set; }
+        protected abstract string TestName { get;}
         protected RichTextBox Output { get; set; }
         protected IDatabaseManager Database { get; set; }
         protected abstract void TestLogic();
@@ -24,13 +24,14 @@ namespace DatabaseSimulator
 
         public void PerformTest()
         {
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
+            Stopwatch watch = new Stopwatch();   
             Output.AppendText(string.Format("Test <{0}> on {1} database started", TestName, Database.Name));
             Output.Refresh();
             try
             {
+                watch.Start();
                 TestLogic();
+                watch.Stop();
             }
             catch (Exception ex)
             {
@@ -38,7 +39,6 @@ namespace DatabaseSimulator
                 Output.ScrollToCaret();
                 return;
             }
-            watch.Stop();
             Output.AppendText(string.Format(Environment.NewLine + "Finished with time : {0}" + Environment.NewLine, watch.Elapsed));
             Output.ScrollToCaret();
         }

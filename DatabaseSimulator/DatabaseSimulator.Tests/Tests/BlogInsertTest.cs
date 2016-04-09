@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DatabaseSimulator.Entities;
 
 namespace DatabaseSimulator.Tests.Tests
 {
@@ -15,7 +16,8 @@ namespace DatabaseSimulator.Tests.Tests
             _quantity = quantity;
         }
 
-        protected override string TestName { get; set; }
+        protected override string TestName => _quantity + "Blogs insert";
+
         protected override void TestLogic()
         {
             if (_quantity <= 0)
@@ -24,7 +26,7 @@ namespace DatabaseSimulator.Tests.Tests
             }
             for (int i = 0; i < _quantity; i++)
             {
-                Database.InsertProduct(new Product() { Name = i.ToString(), Price = i });
+                Database.InsertBlog(new Blog { Name = i.ToString(),Post = new List<Post>() {new Post() {Title = "tmp",Content = "tmpContent"} } });
             }
         }
     }

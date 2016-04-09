@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DatabaseSimulator.Entities
+namespace DatabaseSimulator
 {
-    public class Blog : IEntity
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("Blog")]
+    public partial class Blog
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Blog()
+        {
+            Post = new HashSet<Post>();
+        }
+
         public int Id { get; set; }
+
+        [StringLength(10)]
         public string Name { get; set; }
 
-        public virtual List<Post> Posts { get; set; } 
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Post> Post { get; set; }
     }
 }

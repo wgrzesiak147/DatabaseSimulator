@@ -73,9 +73,25 @@ namespace DatabaseSimulator.NoSQL
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                retval = db.GetCollection<Blog>().Find().ToList();
+                retval = db.GetCollection<Blog>().AsQueryable().ToList();
             }
             return retval;
+        }
+
+        public void CleanBlogs()
+        {
+            using (var db = Mongo.Create(Constants.DatabaseAdress))
+            {
+                db.Database.DropCollection(Constants.Blog);
+            }
+        }
+
+        public void CleanProducts()
+        {
+            using (var db = Mongo.Create(Constants.DatabaseAdress))
+            {
+                db.Database.DropCollection(Constants.Product);
+            }
         }
     }
 }

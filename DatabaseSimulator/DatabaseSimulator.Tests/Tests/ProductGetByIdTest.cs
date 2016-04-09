@@ -15,11 +15,11 @@ namespace DatabaseSimulator.Tests.Tests
             _id = id;
         }
 
-        protected override string TestName { get; set; } = "Product GetById";
+        protected override string TestName =>Constants.Product + " GetById";
         protected override void TestLogic()
         {
             Database.GetProductByID(_id);
-            Output.AppendText(String.Format("Product with id: {0} received",_id));
+            Output.AppendText(String.Format(Environment.NewLine +"Product with id: {0} received",_id));
         }
     }
 }

@@ -9,5 +9,7 @@ namespace DatabaseSimulator
     public class Constants
     {
         public const string DatabaseAdress = "mongodb://localhost/test";
+        public const string Product = "Product";
+        public const string Blog = "Blog";
     }
 }

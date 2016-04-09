@@ -1,14 +1,14 @@
-namespace DatabaseSimulator
+namespace ConsoleApplication1
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class SqlModel : DbContext
+    public partial class Model2 : DbContext
     {
-        public SqlModel()
-            : base("name=SqlModel1")
+        public Model2()
+            : base("name=Model2")
         {
         }
 
