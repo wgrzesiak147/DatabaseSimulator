@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using DatabaseSimulator.Entities;
 using Norm;
+using Norm.Collections;
 
 namespace DatabaseSimulator.NoSQL
 {
-    public class NoSqlServiceManager : IDatabaseManager
+    public class Mongo_NoRM_Services :IDatabaseManager
     {
         public string Name { get; set; } = "NoSql";
 
-        public void InsertProduct(Product objProduct)
+        public void InsertProduct(object objProduct)
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
                 long newid = db.GetCollection<Product>().GenerateId();
-                objProduct.Id = (int) newid;
-                db.GetCollection<Product>().Save(objProduct);
+                Product prod = (Product) objProduct;
+                prod.Id = (int) newid;
+                db.GetCollection<Product>().Save(prod);
             }
         }
 
-        public Product GetProductByID(int id)
+        public object GetProductByID(int id)
         {
             Product retval;
 
@@ -35,45 +38,46 @@ namespace DatabaseSimulator.NoSQL
             return retval;
         }
 
-        public List<Product> GetAllProducts()
+        public List<object> GetAllProducts()
         {
-            var retval = new List<Product>();
+            var retval = new List<object>();
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                retval = db.GetCollection<Product>().Find().ToList();
+                retval = db.GetCollection<Product>().Find().Cast<object>().ToList();
             }
             return retval;
         }
 
-        public void InsertBlog(Blog objBlog)
+        public void InsertBlog(object objBlog)
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                long newid = db.GetCollection<Blog>().GenerateId();
-                objBlog.Id = (int) newid;
-                db.GetCollection<Blog>().Save(objBlog);
+                NoSQLBlog blog = (NoSQLBlog) objBlog;
+                long newid = db.GetCollection<NoSQLBlog>().GenerateId();
+                blog.Id = (int)newid;
+                db.GetCollection<NoSQLBlog>().Save(blog);
             }
         }
 
-        public Blog GetBlogByID(int id)
+        public object GetBlogByID(int id)
         {
-            Blog retval;
+            NoSQLBlog retval;
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                retval = db.GetCollection<Blog>().AsQueryable().FirstOrDefault(x => x.Id == id);
+                retval = db.GetCollection<NoSQLBlog>().AsQueryable().FirstOrDefault(x => x.Id == id);
             }
             return retval;
         }
 
-        public List<Blog> GetAllBlogs()
+        public List<object> GetAllBlogs()
         {
-            var retval = new List<Blog>();
+            var retval = new List<object>();
 
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                retval = db.GetCollection<Blog>().AsQueryable().ToList();
+                retval = db.GetCollection<NoSQLBlog>().Find().Cast<object>().ToList();
             }
             return retval;
         }
@@ -82,7 +86,12 @@ namespace DatabaseSimulator.NoSQL
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                db.Database.DropCollection(Constants.Blog);
+                 var blogCollection = db.GetCollection<NoSQLBlog>().Find(); 
+
+                foreach (var blog in blogCollection)
+                {
+                    db.GetCollection<NoSQLBlog>().Delete(blog);
+                }
             }
         }
 
@@ -90,7 +99,12 @@ namespace DatabaseSimulator.NoSQL
         {
             using (var db = Mongo.Create(Constants.DatabaseAdress))
             {
-                db.Database.DropCollection(Constants.Product);
+                var blogCollection = db.GetCollection<Product>().Find();
+
+                foreach (var blog in blogCollection)
+                {
+                    db.GetCollection<Product>().Delete(blog);
+                }
             }
         }
     }

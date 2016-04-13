@@ -40,14 +40,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnPerformNoSql = new System.Windows.Forms.Button();
+            this.cmbId = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.UserPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbId)).BeginInit();
             this.SuspendLayout();
             // 
             // UserPanel
             // 
             this.UserPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserPanel.Controls.Add(this.label5);
+            this.UserPanel.Controls.Add(this.cmbId);
             this.UserPanel.Controls.Add(this.label4);
             this.UserPanel.Controls.Add(this.cmbDatabase);
             this.UserPanel.Controls.Add(this.label3);
@@ -88,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 161);
+            this.label3.Location = new System.Drawing.Point(75, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 8;
@@ -181,6 +186,28 @@
             this.btnPerformNoSql.UseVisualStyleBackColor = true;
             this.btnPerformNoSql.Click += new System.EventHandler(this.btnPerformNoSql_Click);
             // 
+            // cmbId
+            // 
+            this.cmbId.Location = new System.Drawing.Point(185, 275);
+            this.cmbId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbId.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.cmbId.Name = "cmbId";
+            this.cmbId.Size = new System.Drawing.Size(180, 22);
+            this.cmbId.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(75, 277);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Id";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,6 +221,7 @@
             this.UserPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmbQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbId)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,6 +239,8 @@
         private System.Windows.Forms.ComboBox cmbEntity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbDatabase;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown cmbId;
     }
 }
 

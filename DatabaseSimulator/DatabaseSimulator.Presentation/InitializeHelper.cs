@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DatabaseSimulator.Presentation.Entities;
 using DatabaseSimulator.Tests.NoSQL;
 using System.Windows.Forms;
+using DatabaseSimulator.Tests.SQL;
 
 namespace DatabaseSimulator.Presentation
 {
@@ -18,7 +19,7 @@ namespace DatabaseSimulator.Presentation
             return new BindingList<TestManagerObject>()
             {
                 {new TestManagerObject(new NoSqlTestManager(Output), "MongoDB")},
-                {new TestManagerObject(new NoSqlTestManager(Output), "MSSQL 2012")}
+                {new TestManagerObject(new SqlTestManager(Output), "MSSQL 2012")}
             };
         }
 

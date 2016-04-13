@@ -1,3 +1,5 @@
+using DatabaseSimulator.Entities;
+
 namespace DatabaseSimulator
 {
     using System;

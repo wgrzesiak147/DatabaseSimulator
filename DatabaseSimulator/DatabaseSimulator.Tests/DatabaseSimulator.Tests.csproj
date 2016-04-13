@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOperation.cs" />
     <Compile Include="ITestManager.cs" />
     <Compile Include="Tests\BlogClean.cs" />
     <Compile Include="Tests\BlogGetAllTest.cs" />

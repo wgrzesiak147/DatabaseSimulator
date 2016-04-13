@@ -44,9 +44,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Norm, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NoRM.0.9.8\lib\Norm.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Norm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GIT\norm\NoRM\NoRM\bin\Debug\Norm.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -65,11 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="MongoDB\Mongo_Crude_Servives.cs" />
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="Model1.cs" />
-    <Compile Include="NoSQL\NoSqlServiceManager.cs" />
+    <Compile Include="MongoDB\Mongo_NoRM_Services.cs" />
+    <Compile Include="MSSQL\MSSQL_ADO_Services.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQL\SqlServiceManager.cs" />
+    <Compile Include="MSSQL\MSSQL_EntityFramework_Services.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -101,6 +103,7 @@
       <Name>DatabaseSimulator.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

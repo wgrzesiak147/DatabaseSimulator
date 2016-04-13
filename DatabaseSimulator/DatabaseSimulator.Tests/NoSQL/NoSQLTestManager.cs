@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Threading.Tasks;
+using System.Windows.Forms;
 using DatabaseSimulator.NoSQL;
 using DatabaseSimulator.Tests.Generic;
 using DatabaseSimulator.Tests.Tests;
@@ -16,48 +17,52 @@ namespace DatabaseSimulator.Tests.NoSQL
 
         public void PerformProductInserts(int quantity)
         {
-            ProductInsertTest<NoSqlServiceManager> productInsertTest = new ProductInsertTest<NoSqlServiceManager>(_output,quantity);
+            ProductInsertTest<Mongo_NoRM_Services> productInsertTest = new ProductInsertTest<Mongo_NoRM_Services>(_output, quantity);
             productInsertTest.PerformTest();
         }
 
         public void PerformProductGetAll()
         {
-            ProductGetAllTest<NoSqlServiceManager> insertTest = new ProductGetAllTest<NoSqlServiceManager>(_output);
+            ProductGetAllTest<Mongo_NoRM_Services> insertTest = new ProductGetAllTest<Mongo_NoRM_Services>(_output);
             insertTest.PerformTest();
         }
 
         public void PerformProductGetByIdTest(int id)
         {
-            ProductGetByIdTest<NoSqlServiceManager> insertTest = new ProductGetByIdTest<NoSqlServiceManager>(_output,id);
+            ProductGetByIdTest<Mongo_NoRM_Services> insertTest = new ProductGetByIdTest<Mongo_NoRM_Services>(_output, id);
             insertTest.PerformTest();
         }
 
         public void PerformBlogInserts(int quantity)
         {
-            BlogInsertTest<NoSqlServiceManager> productInsertTest = new BlogInsertTest<NoSqlServiceManager>(_output, quantity);
+            BlogInsertTest<Mongo_NoRM_Services> productInsertTest = new BlogInsertTest<Mongo_NoRM_Services>(_output, quantity);
             productInsertTest.PerformTest();
         }
 
         public void PerformBlogGetAll()
         {
-            BlogGetAllTest<NoSqlServiceManager> insertTest = new BlogGetAllTest<NoSqlServiceManager>(_output);
+            BlogGetAllTest<Mongo_NoRM_Services> insertTest = new BlogGetAllTest<Mongo_NoRM_Services>(_output);
             insertTest.PerformTest();
+
         }
 
         public void PerformBlogGetByIdTest(int id)
         {
-            BlogGetByIdTest<NoSqlServiceManager> productInsertTest = new BlogGetByIdTest<NoSqlServiceManager>(_output, id);
+            BlogGetByIdTest<Mongo_NoRM_Services> productInsertTest = new BlogGetByIdTest<Mongo_NoRM_Services>(_output, id);
             productInsertTest.PerformTest();
         }
 
         public void PerformBlogClean()
         {
-            throw new System.NotImplementedException();
+            BlogClean<Mongo_NoRM_Services> blogCleanTest = new BlogClean<Mongo_NoRM_Services>(_output);
+            blogCleanTest.PerformTest(); 
         }
 
         public void PerformProductClean()
         {
-            throw new System.NotImplementedException();
+            ProductClean<Mongo_NoRM_Services> blogCleanTest = new ProductClean<Mongo_NoRM_Services>(_output);
+            blogCleanTest.PerformTest();
         }
+
     }
 }

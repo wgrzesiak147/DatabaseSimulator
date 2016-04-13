@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using DatabaseSimulator.Entities;
 using DatabaseSimulator.Presentation;
 using DatabaseSimulator.Presentation.Entities;
 using DatabaseSimulator.Tests;
@@ -36,67 +35,59 @@ namespace DatabaseSimulator
       
             cmbEntity.SelectedIndex = 0;
             cmbCommand.SelectedIndex = 0;
-
-
         }
 
-       
 
         private void btnPerformNoSql_Click(object sender, EventArgs e)
         {
             int quantity = (int)cmbQuantity.Value;
-
+            int id = (int) cmbId.Value;
             ITestManager selectedDatabase = ((TestManagerObject)cmbDatabase.SelectedValue).Value;
-            IOperation selectedOperation = ((OperationObject) cmbCommand.SelectedValue).Value;
-            IEntity selectedEntity = ((EntityObject) cmbEntity.SelectedValue).Value;
 
-          
-            // IOperation operation = 
-
-//            if (cmbCommand.Text == "Insert")
-//            {
-//                if (cmbEntity.Text == "Product")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformProductInserts(quantity);
-//                }
-//                else if (cmbEntity.Text == "Blog")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformBlogInserts(quantity);
-//                }
-//            }
-//            else if (cmbCommand.Text == "GetAll")
-//            {
-//                if (cmbEntity.Text == "Product")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformProductGetAll();
-//                }
-//                else if (cmbEntity.Text == "Blog")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformBlogGetAll();
-//                }
-//            }
-//            if (cmbCommand.Text == "Insert")
-//            {
-//                if (cmbEntity.Text == "Product")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformProductInserts(quantity);
-//                }
-//                else if (cmbEntity.Text == "Blog")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformBlogInserts(quantity);
-//                }
-//            }
-//            else if (cmbCommand.Text == "Clean")
-//            {
-//                if (cmbEntity.Text == "Product")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformProductClean();
-//                }
-//                else if (cmbEntity.Text == "Blog")
-//                {
-//                    _databasesTestManagers[selectedDatabase].PerformBlogClean();
-//                }
-            //}
+            if (cmbCommand.Text == "Insert")
+            {
+                if (cmbEntity.Text == "Product")
+                {
+                    selectedDatabase.PerformProductInserts(quantity);
+                }
+                else if (cmbEntity.Text == "Blog")
+                {
+                    selectedDatabase.PerformBlogInserts(quantity);
+                }
+            }
+            else if (cmbCommand.Text == "GetAll")
+            {
+                if (cmbEntity.Text == "Product")
+                {
+                    selectedDatabase.PerformProductGetAll();
+                }
+                else if (cmbEntity.Text == "Blog")
+                {
+                    selectedDatabase.PerformBlogGetAll();
+                }
+            }
+           else if (cmbCommand.Text == "GetByID")
+            {
+                if (cmbEntity.Text == "Product")
+                {
+                    selectedDatabase.PerformProductGetByIdTest(id);
+                }
+                else if (cmbEntity.Text == "Blog")
+                {
+                    selectedDatabase.PerformBlogGetByIdTest(id);
+                }
+            }
+            else if (cmbCommand.Text == "Clean")
+            {
+                if (cmbEntity.Text == "Product")
+                {
+                    selectedDatabase.PerformProductClean();
+                }
+                else if (cmbEntity.Text == "Blog")
+                {
+                    selectedDatabase.PerformBlogClean();
+                }
+            }
         }
     }
 }

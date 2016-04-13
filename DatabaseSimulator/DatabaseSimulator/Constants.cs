@@ -11,5 +11,6 @@ namespace DatabaseSimulator
         public const string DatabaseAdress = "mongodb://localhost/test";
         public const string Product = "Product";
         public const string Blog = "Blog";
+        public const string SQLConnectionString = "Data Source=WOJTEK;Initial Catalog=SQL;Integrated Security=True";
     }
 }

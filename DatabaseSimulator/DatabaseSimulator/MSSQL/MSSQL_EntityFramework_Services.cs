@@ -5,22 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using DatabaseSimulator.Entities;
 
+
 namespace DatabaseSimulator.SQL
 {
-    public class SqlServiceManager : IDatabaseManager
+    public class MSSQL_EntityFramework_Services : IDatabaseManager
     {
         public string Name { get; set; } = "SQL";
-       
-        public void InsertProduct(Product objProduct)
+
+        public void InsertProduct(object objProduct)
         {
             using (var db = new Model1())
             {
-                db.Product.Add(objProduct);
+                Product prod = (Product) objProduct;
+                db.Product.Add(prod);
                 db.SaveChanges();
             }
         }
 
-        public Product GetProductByID(int id)
+        public object GetProductByID(int id)
         {
             using (var db = new Model1())
             {
@@ -29,26 +31,25 @@ namespace DatabaseSimulator.SQL
             }
         }
 
-        public List<Product> GetAllProducts()
+        public List<object> GetAllProducts()
         {
             using (var db = new Model1())
             {
                 List<Product> products = db.Product.ToList();
-                return products;
+                return products.Cast<object>().ToList();
             }
         }
 
-        public void InsertBlog(Blog objBlog)
+        public void InsertBlog(object objBlog)
         {
             using (var db = new Model1())
             {
-                db.Blog.Add(objBlog);
+                Blog blog = (Blog) objBlog;
+                db.Blog.Add(blog);
                 db.SaveChanges();
             }
         }
-
-
-        public Blog GetBlogByID(int id)
+        public object GetBlogByID(int id)
         {
             using (var db = new Model1())
             {
@@ -57,14 +58,15 @@ namespace DatabaseSimulator.SQL
             }
         }
 
-        public List<Blog> GetAllBlogs()
+        public List<object> GetAllBlogs()
         {
             using (var db = new Model1())
             {
                 List<Blog> blogs = db.Blog.ToList();
-                return blogs;
+                return blogs.Cast<object>().ToList();
             }
         }
+
 
         public void CleanBlogs()
         {
@@ -80,7 +82,7 @@ namespace DatabaseSimulator.SQL
             using (var db = new Model1())
             {
                 db.Database.ExecuteSqlCommand("TRUNCATE TABLE Product");
-            }    
+            }
         }
     }
 }

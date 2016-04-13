@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blog.cs" />
-    <Compile Include="IEntity.cs" />
+    <Compile Include="NoSQLPost.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NoSQLBlog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

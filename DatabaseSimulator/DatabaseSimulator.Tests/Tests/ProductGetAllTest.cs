@@ -13,11 +13,13 @@ namespace DatabaseSimulator.Tests
         {
         }
 
-        protected override string TestName { get; } = Constants.Product +" GetAlltest";
+        protected override string TestName { get; } = Constants.Product + " GetAlltest";
+
         protected override void TestLogic()
         {
-          List<Product> listOfObjects = Database.GetAllProducts();
-           Output.AppendText(String.Format(Environment.NewLine + "Received {0} objects", listOfObjects.Count()));
+            List<object> listOfObjects = Database.GetAllProducts();
+
+            Output.AppendText(String.Format(Environment.NewLine + "Received {0} objects", listOfObjects.Count()));
         }
     }
 }
