@@ -42,19 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITestManager.cs" />
+    <Compile Include="Enum\DatabaseType.cs" />
     <Compile Include="Tests\BlogClean.cs" />
-    <Compile Include="Tests\BlogGetAllTest.cs" />
-    <Compile Include="Tests\BlogGetByIdTest.cs" />
-    <Compile Include="Tests\BlogInsertTest.cs" />
+    <Compile Include="Tests\BlogGetAllOperation.cs" />
+    <Compile Include="Tests\BlogGetByIdOperation.cs" />
+    <Compile Include="Tests\BlogInsertOperation.cs" />
     <Compile Include="Tests\ProductClean.cs" />
-    <Compile Include="Tests\ProductGetAllTest.cs" />
-    <Compile Include="Tests\ProductGetByIdTest.cs" />
-    <Compile Include="Tests\ProductInsertTest.cs" />
-    <Compile Include="NoSQL\NoSQLTestManager.cs" />
+    <Compile Include="Tests\ProductGetAllOperation.cs" />
+    <Compile Include="Tests\ProductGetByIdOperation.cs" />
+    <Compile Include="Tests\ProductInsertOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQL\SQLTestManager.cs" />
-    <Compile Include="Tests\Test.cs" />
+    <Compile Include="Tests\Operation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatabaseSimulator.Entities\DatabaseSimulator.Entities.csproj">

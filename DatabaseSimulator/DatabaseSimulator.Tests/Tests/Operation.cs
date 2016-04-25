@@ -6,28 +6,30 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DatabaseSimulator.Tests.Enum;
 
 namespace DatabaseSimulator
 {
-    public abstract class Test
+    public abstract class Operation
     {
+        protected DatabaseType DatabaseType;
+        protected int Id { get; set; }
+        protected int Quantity { get; set; }
         protected abstract string TestName { get; }
         protected RichTextBox Output { get; set; }
         protected IDatabaseManager Database { get; set; }
         protected abstract void TestLogic();
-        protected Test(RichTextBox output, IDatabaseManager database)
+
+        public void PerformTest(IDatabaseManager database, RichTextBox output,int id,int quantity,DatabaseType type = DatabaseType.MSSQL)
         {
-            Output = output;
+            DatabaseType = type;
+            Quantity = quantity;
+            Id = id;
             Database = database;
-        }
-
-
-
-        public void PerformTest()
-        {
+            Output = output;
             Stopwatch watch = new Stopwatch();
 
-            Output.AppendText(string.Format("Test <{0}> on {1} database started", TestName, Database.Name));
+            Output.AppendText(string.Format("Operation <{0}> on {1} database started", TestName, Database.Name));
             Output.Refresh();
 
             try

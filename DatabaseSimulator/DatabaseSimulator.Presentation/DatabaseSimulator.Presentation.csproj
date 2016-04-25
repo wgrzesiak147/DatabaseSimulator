@@ -55,9 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\OperationObject.cs" />
     <Compile Include="InitializeHelper.cs" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="Entities\TestManagerObject.cs" />
+    <Compile Include="Entities\DatabaseServicesObject.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +100,10 @@
     <ProjectReference Include="..\DatabaseSimulator.Tests\DatabaseSimulator.Tests.csproj">
       <Project>{ba62ba87-6308-467d-b51b-36e88cbbe590}</Project>
       <Name>DatabaseSimulator.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseSimulator\DatabaseSimulator.Model.csproj">
+      <Project>{0df94f81-bcea-4b09-aea3-2215474b95ea}</Project>
+      <Name>DatabaseSimulator.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

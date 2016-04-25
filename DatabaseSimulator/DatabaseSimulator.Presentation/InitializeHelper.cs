@@ -5,27 +5,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseSimulator.Presentation.Entities;
-using DatabaseSimulator.Tests.NoSQL;
 using System.Windows.Forms;
-using DatabaseSimulator.Tests.SQL;
+using DatabaseSimulator.CrudeMongo;
+using DatabaseSimulator.MSSQL;
+using DatabaseSimulator.NoSQL;
+using DatabaseSimulator.SQL;
+using DatabaseSimulator.Tests;
+using DatabaseSimulator.Tests.Enum;
+using DatabaseSimulator.Tests.Tests;
+
 
 namespace DatabaseSimulator.Presentation
 {
     public static class InitializeHelper
     {
-        private static RichTextBox Output;
-        public static  BindingList<TestManagerObject> InitializeTestManagers()
+        public static BindingList<DatabaseServicesObject> GetDatabaseDataSource()
         {
-            return new BindingList<TestManagerObject>()
+            return new BindingList<DatabaseServicesObject>()
             {
-                {new TestManagerObject(new NoSqlTestManager(Output), "MongoDB")},
-                {new TestManagerObject(new SqlTestManager(Output), "MSSQL 2012")}
+                {new DatabaseServicesObject(new Mongo_NoRM_Services(), "MongoDB - NORM",DatabaseType.MongoDB)},
+                {new DatabaseServicesObject(new MSSQL_EntityFramework_Services(), "MSSQL - Entity Framework",DatabaseType.MSSQL)},
+                {new DatabaseServicesObject(new MSSQL_ADO_Services(), "MSSQL - ADO.NET",DatabaseType.MSSQL)},
+                {new DatabaseServicesObject(new Mongo_Crude_Services(), "MongoDB",DatabaseType.MongoDB)}
             };
         }
 
-        public static void InitializeOutput(RichTextBox output)
+        public static BindingList<OperationObject> GetOperationSource()
         {
-            Output = output;
+            return new BindingList<OperationObject>()
+            {
+                {new OperationObject(new BlogClean(), "Blog - Clean")},
+                {new OperationObject(new BlogGetAllOperation(), "Blog - Get all")},
+                {new OperationObject(new BlogGetByIdOperation(), "Blog - Get by Id")},
+                {new OperationObject(new BlogInsertOperation(), "Blog - Insert")},
+                {new OperationObject(new ProductClean(), "Product - Clean")},
+                {new OperationObject(new ProductGetAllOperation(), "Product - Get all")},
+                {new OperationObject(new ProductGetByIdOperation(), "Product - Get by Id")},
+                {new OperationObject(new ProductInsertOperation(), "Product - insert")}
+            };
         }
     }
 }

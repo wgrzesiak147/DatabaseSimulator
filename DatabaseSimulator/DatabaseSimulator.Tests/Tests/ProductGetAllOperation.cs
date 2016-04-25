@@ -7,12 +7,8 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests
 {
-    public class ProductGetAllTest<T> : Test where T : IDatabaseManager, new()
+    public class ProductGetAllOperation : Operation
     {
-        public ProductGetAllTest(RichTextBox output) : base(output, new T())
-        {
-        }
-
         protected override string TestName { get; } = Constants.Product + " GetAlltest";
 
         protected override void TestLogic()

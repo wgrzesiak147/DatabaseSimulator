@@ -10,12 +10,8 @@ using DatabaseSimulator.Entities;
 
 namespace DatabaseSimulator.Tests.Tests
 {
-    public class BlogGetAllTest<T> : Test where T : IDatabaseManager, new()
+    public class BlogGetAllOperation : Operation 
     {
-        public BlogGetAllTest(RichTextBox output) : base(output, new T())
-        {
-        }
-
         protected override string TestName => Constants.Blog + "GetAll";
 
         protected override void TestLogic()

@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="MongoDB\Mongo_Crude_Servives.cs" />
+    <Compile Include="MongoDB\Mongo_Crude_Services.cs" />
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="Model1.cs" />
     <Compile Include="MongoDB\Mongo_NoRM_Services.cs" />

@@ -7,13 +7,12 @@ using System.Windows.Forms;
 
 namespace DatabaseSimulator.Tests.Tests
 {
-    public class ProductClean : Operation
+    public class BlogClean : Operation
     {
-        protected override string TestName => Constants.Product + " Clean";
-
+        protected override string TestName => Constants.Blog + " clean";
         protected override void TestLogic()
         {
-            Database.CleanProducts();
+            Database.CleanBlogs();
         }
     }
 }
