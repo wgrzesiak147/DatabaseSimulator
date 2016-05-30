@@ -11,8 +11,6 @@ using DatabaseSimulator.Tests.Enum;
 namespace DatabaseSimulator
 {
 
-
-    
     public partial class Form1 : Form
     {
         public Form1()

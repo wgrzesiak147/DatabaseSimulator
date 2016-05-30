@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using DatabaseSimulator.Entities;
+using IsolationLevel = System.Data.IsolationLevel;
 
 
 namespace DatabaseSimulator.SQL
@@ -14,12 +16,17 @@ namespace DatabaseSimulator.SQL
 
         public void InsertProduct(object objProduct)
         {
-            using (var db = new Model1())
-            {
-                Product prod = (Product) objProduct;
-                db.Product.Add(prod);
-                db.SaveChanges();
-            }
+            //using (
+            //    var scope = new TransactionScope(TransactionScopeOption.Required,
+            //        new TransactionOptions {IsolationLevel = System.Transactions.IsolationLevel.Snapshot}))
+            //{
+                using (var db = new Model1())
+                {
+                    Product prod = (Product) objProduct;
+                    db.Product.Add(prod);
+                    db.SaveChanges();
+                }
+           // }
         }
 
         public object GetProductByID(int id)
@@ -72,8 +79,8 @@ namespace DatabaseSimulator.SQL
         {
             using (var db = new Model1())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE Post");
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE Blog");
+                db.Database.ExecuteSqlCommand("DELETE  FROM  Post");
+                db.Database.ExecuteSqlCommand("DELETE  FROM  Blog");
             }
         }
 
@@ -83,6 +90,32 @@ namespace DatabaseSimulator.SQL
             {
                 db.Database.ExecuteSqlCommand("TRUNCATE TABLE Product");
             }
+        }
+
+        public List<object> GetAllPosts()
+        {
+            List<Post> result= null;
+            using (var db = new Model1())
+            {
+                result = db.Post.ToList();
+                return result.Cast<object>().ToList();
+            }
+            
+        }
+
+        public void InsertReceipt(object receipt)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<object> GetAllReceipts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CleanReceipts()
+        {
+            throw new NotImplementedException();
         }
     }
 }

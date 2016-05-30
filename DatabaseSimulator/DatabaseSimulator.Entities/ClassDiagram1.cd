@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlArticle">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAQAAAAAAAAAAQAACAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlArticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlCustomers">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAgAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlCustomers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlElement">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAACAAAAAAAAAAAAAAAAAACAAgAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlEmployee">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAIAAAAAAAAAAAAAAAAAAAAAQABAAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlPersonalData">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQABAAAAAACAIAAAAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlPersonalData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseSimulator.Entities.NoSQLShop.NoSqlReceipts">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAgAAAAAAAAAAAACAAAAABAAQAAAAAAAAA=</HashCode>
+      <FileName>NoSQLShop\NoSqlReceipts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

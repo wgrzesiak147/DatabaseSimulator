@@ -47,7 +47,7 @@ namespace DatabaseSimulator
             }
 
             Output.AppendText(string.Format(Environment.NewLine + "Finished with time : {0}" + Environment.NewLine,
-                watch.Elapsed));
+                watch.Elapsed.TotalSeconds));
             Output.ScrollToCaret();
         }
     }

@@ -19,5 +19,11 @@ namespace DatabaseSimulator
         List<object> GetAllBlogs();
         void CleanBlogs();
         void CleanProducts();
+        List<object> GetAllPosts();
+        void InsertReceipt(object receipt);
+        List<object> GetAllReceipts();
+        void CleanReceipts();
+
+
     }
 }

@@ -41,7 +41,8 @@ namespace DatabaseSimulator.Presentation
                 {new OperationObject(new ProductClean(), "Product - Clean")},
                 {new OperationObject(new ProductGetAllOperation(), "Product - Get all")},
                 {new OperationObject(new ProductGetByIdOperation(), "Product - Get by Id")},
-                {new OperationObject(new ProductInsertOperation(), "Product - insert")}
+                {new OperationObject(new ProductInsertOperation(), "Product - insert")},
+                {new OperationObject(new PostGetAllOperation(), "Post - Get all")}
             };
         }
     }

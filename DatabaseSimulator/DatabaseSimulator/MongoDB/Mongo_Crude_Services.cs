@@ -50,5 +50,25 @@ namespace DatabaseSimulator.CrudeMongo
         {
             throw new NotImplementedException();
         }
+
+        public List<object> GetAllPosts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InsertReceipt(object receipt)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<object> GetAllReceipts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CleanReceipts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

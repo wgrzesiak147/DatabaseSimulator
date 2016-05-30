@@ -44,6 +44,12 @@
     <Compile Include="Blog.cs" />
     <Compile Include="NoSQLPost.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="NoSQLShop\NoSqlArticle.cs" />
+    <Compile Include="NoSQLShop\NoSqlElement.cs" />
+    <Compile Include="NoSQLShop\NoSqlEmployee.cs" />
+    <Compile Include="NoSQLShop\NoSqlCustomers.cs" />
+    <Compile Include="NoSQLShop\NoSqlReceipts.cs" />
+    <Compile Include="NoSQLShop\NoSqlPersonalData.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

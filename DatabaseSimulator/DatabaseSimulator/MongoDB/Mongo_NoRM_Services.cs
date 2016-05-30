@@ -107,5 +107,32 @@ namespace DatabaseSimulator.NoSQL
                 }
             }
         }
+
+        public List<object> GetAllPosts()
+        {
+            var retval = new List<object>();
+            var blogList = new List<NoSQLBlog>();
+            using (var db = Mongo.Create(Constants.DatabaseAdress))
+            {
+                blogList = db.GetCollection<NoSQLBlog>().Find().ToList();
+            }
+            blogList.ForEach(x=> retval.AddRange(x.Post));
+            return retval;
+        }
+
+        public void InsertReceipt(object receipt)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<object> GetAllReceipts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CleanReceipts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

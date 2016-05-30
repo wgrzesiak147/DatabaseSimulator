@@ -47,6 +47,7 @@
     <Compile Include="Tests\BlogGetAllOperation.cs" />
     <Compile Include="Tests\BlogGetByIdOperation.cs" />
     <Compile Include="Tests\BlogInsertOperation.cs" />
+    <Compile Include="Tests\PostGetAllOperation.cs" />
     <Compile Include="Tests\ProductClean.cs" />
     <Compile Include="Tests\ProductGetAllOperation.cs" />
     <Compile Include="Tests\ProductGetByIdOperation.cs" />

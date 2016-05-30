@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 namespace DatabaseSimulator.Entities
 {
 
-    public class NoSQLBlog : Entity<NoSQLBlog>
+    public class NoSQLBlog
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public IList<NoSQLPost> Post { get; set; } 
+        public IList<NoSQLPost> Post { get; set; }
     }
 }
